@@ -1,0 +1,452 @@
+
+@black:#303030;
+@white:#F6F6F6;
+@gray:#878787;
+@background:url(../img/sagiri_1.jpg);
+@shadow:0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+
+
+html {
+    font-family:~' Consolas,"Open Sans", Helvetica, Tahoma, Arial, "Microsoft YaHei", 微软雅黑, STXihei, 华文细黑, SimSun, 宋体, Heiti, 黑体, sans-serif';
+    color:@black;
+}
+a{
+    color: #39bde9;
+    text-decoration: none;
+}
+
+background{
+    top:0;
+    right:0;
+    width:100%;
+    height:100%;
+    position: fixed;
+    background-image: @background;
+    background-size: cover;
+    z-index:-1;
+}
+
+navbar{
+    opacity:0.9;
+    z-index:10;
+    height:50px;
+    width:100%;
+    position: fixed;
+    top:0;
+    left:0;
+    font-size:17px;
+    line-height:2.3;
+    overflow: hidden;
+    color:rgba(245,245,245,0.85);
+    box-shadow: 0 0 10px #0c0c0c;
+    .barlist{
+        padding:5px;
+        filter: blur(0px);
+        
+        .barlist_right{
+            flex-direction: row-reverse;
+            margin-top:-39px;
+        }
+        
+        .barlist_group{
+            display:flex;
+        }
+        .barlist_item{
+            cursor: pointer;
+            color:rgba(245,245,245,0.85);
+            text-decoration: none;
+            margin:0 18px;
+            transition: text-shadow .2s;
+            &:hover{
+                text-shadow: 0 0 20px #fff,0 0 20px #fff;
+            }
+        }
+    }
+    &:before{
+        content: '';
+        position:absolute;
+        top:0;
+        left:0;
+        bottom:0;
+        left:0;
+        width:100%;
+        filter: blur(15px) brightness(0.8);
+        z-index:-1;
+        background-size: cover;
+        margin:-30px -10px -15px;
+        background-image: @background;
+    }
+}
+
+.posts{
+    margin-top:80px;
+    .post_item{
+        margin-top:40px;
+        border-radius:4px;
+        background:rgba(245,245,245,0.6);
+        position:relative;
+        overflow: hidden;
+        box-shadow: @shadow;
+        color:@black;
+        &:before{
+            content: '';
+            position:absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            filter: blur(15px);
+            margin:-5px;
+            background-image: @background;
+            background-attachment: fixed;
+            background-size: cover;
+            z-index:-1;
+        }
+        .post_body{
+            display:flex;
+            .post_image{
+                width:600px;
+                cursor:pointer;
+                overflow: hidden;
+            }
+            .post_image .post_image_container{
+                width:100%;
+                height:100%;
+                background-size:cover;
+                transition: transform 0.3s;
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+            .post_content{
+                margin:20px;
+                font-size:17px;
+                line-height:1.9;
+            }
+        }
+        .post_head{
+            background:rgba(255,255,255,0.5);
+            padding:20px;
+            display:flex;
+            
+            overflow: hidden;
+            height:20px;
+        }
+        .post_title{
+            font-size:20px;
+            line-height: 1.1;
+        }
+        .post_actions{
+            flex-direction: row-reverse;
+            margin-top:-60px;
+            .fa{
+                line-height:1.3;
+            }
+            .user-avatar-small{
+                margin-top:-9px;
+            }
+        }
+        .post_foot{
+            background-color:rgba(245,245,245,0.6);
+            padding:15px;
+            display:flex;
+            flex-direction: row-reverse;
+            overflow: hidden;
+            transition: background-color 0.2s;
+            &:hover{
+                background-color:rgba(255,255,255,1);
+            }
+        }
+        .post_comment_quick{
+            width:100%;
+            background-color:transparent;
+            border:none;
+            -webkit-appearance:none;
+            -webkit-user-select: none;
+            padding:0;
+            outline: none;
+            font-size:15px;
+        }
+    }
+    
+}
+.view{
+    background-color:rgba(0,0,0,0.5);
+    z-index:10;
+    position:fixed;
+    overflow-y:scroll;
+    height:100%;
+    top:0;
+    left:0;
+    display:none;
+    width:100%;
+    opacity: 0;
+    transition:opacity 0.3s;
+    .view_container{
+        background-color:rgba(245,245,245,1);
+        padding:0;
+        
+        .view_toolbar{
+            display:flex;
+            flex-direction: row-reverse;
+            color:white;
+            padding-top:10px;
+            padding-right:20px;
+            
+            .view_toolbar_item{
+                color:rgba(135,135,135,0.7);
+                margin:0 15px;
+                transition:color 0.2s;
+                &:hover{
+                    color:rgba(0,0,0,0.9);
+                    animation: shake 0.2s;
+                }
+            }
+        }
+        .view_head{
+            margin-top:-58px;
+            background-image:linear-gradient(transparent, #f5f5f5),url(../img/sagiri_1.jpg);
+            background-size: cover;
+            padding-top:150px;
+            padding-left:50px;
+            padding-right:50px;
+            padding-bottom:120px;
+            .view_meta{
+                color:@gray;
+                border-left:solid #66ccff 5px;
+                background-color:rgba(255,255,255,0.7);
+                padding:7px;
+           }
+        }
+        
+        .view_body{
+            padding:50px;
+            margin-top:-120px;
+            line-height:1.7;
+            
+            img{
+                max-width:100%;
+            }
+        }
+    }
+}
+
+.sagiri_btn{
+    cursor:pointer;
+    text-decoration: none;
+    margin:0 10px;
+    padding:5px;
+    background-color:@gray;
+    border: none;
+    color:@white;
+    text-align: center;
+    border-radius: 2px;
+    font-size:14px;
+    box-shadow: @shadow;
+}
+.user-avatar-small{
+    width: 35px;
+    height:35px;
+    border-radius: 50%;
+}
+
+@keyframes shake{
+    0%{transform:rotate(-5deg)}
+    50%{transform:rotate(5deg)}
+    100%{transform:rotate(-5deg)}
+}
+
+/* Typecho Comment Stylesheet Hacking */
+#comments{
+    border-top: dotted rgba(135,135,135,0.6);
+    margin-top: 40px;
+    .comment-meta a{
+        color:@gray;
+    }
+    .comment-author span .avatar{
+        border-radius:50%;
+        margin-bottom: -10px;
+    }
+    .comment-reply{
+        display:none;
+    }
+    .comment-list{
+        padding:0;
+    }
+    .comment-list li{
+        margin-top:10px;
+        list-style: none;
+        padding:15px 0px 5px 20px;
+        border-left:solid #66ccff;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    .comment-info{
+        display:flex;
+        input{
+            width:100%;
+            margin-left:5px;
+            border-bottom:1px solid #9e9e9e!important;
+            transition:box-shadow 0.4s;
+            background-color: rgba(230,230,230,0.7);
+            border:none;
+            -webkit-appearance:none;
+            border-radius:3px;
+            -webkit-user-select: none;
+            padding:0;
+            outline: none;
+            font-size:15px;
+            padding:5px;
+            
+            &:focus{
+                box-shadow: 0 1px 0 0 #26a69a;
+            }
+        }
+    }
+    .textarea{
+        width:100%;
+        margin-left:5px;
+        border-bottom:1px solid #9e9e9e!important;
+        transition:box-shadow 0.4s;
+        background-color: rgba(230,230,230,0.7);
+        padding: 20px;
+        box-sizing: border-box;
+        border:none;
+        -webkit-appearance:none;
+        -webkit-user-select: none;
+        padding:0;
+        outline: none;
+        font-size:15px;
+        padding:5px;
+        border-radius:3px;
+        &:focus{
+            box-shadow: 0 1px 0 0 #26a69a;
+        }
+    }
+    .respond{
+        margin-top:30px;
+    }
+}
+
+pre {
+    display: block;
+    margin: 0 0 10px;
+    padding: 9.5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    color: #333;
+    word-wrap: break-word;
+    font-size: 15px;
+    line-height: 1.42857143;
+    word-break: break-all
+}
+
+pre code {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    color: inherit;
+    white-space: pre-wrap;
+    font-size: inherit;
+    line-height: inherit
+}
+
+input,select,textarea {
+    margin: 0 0 5px;
+    padding: 6px 9px;
+    width: 260px;
+    outline: 0;
+    border: 1px solid #e7eef2;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: none;
+    font-weight: 100;
+    font-size: 17px;
+    font-family: Open Sans,sans-serif;
+    line-height: 1.4em;
+    -webkit-appearance: none
+}
+
+code,tt {
+    padding: .2rem .3rem .1rem;
+    border: 1px solid #d8e0e4;
+    border-radius: 2px;
+    background: #f5f7f8;
+    color: #c25;
+    vertical-align: middle;
+    white-space: pre-wrap;
+    font-size: .8em;
+    line-height: 1em
+}
+
+blockquote {
+    margin: 1.6em 0;
+    padding: 0 1.6em;
+    border-left: .6em solid #dfe1e3
+}
+
+/* from grid.css */
+.container{
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:10px;
+    padding-right:10px;
+}
+@media(min-width:768px){
+    .container{
+        max-width:728px;
+    }
+}
+@media(min-width:992px){
+    .container{
+        max-width:952px;
+    }
+}
+@media(min-width:1200px){
+    .container{
+        max-width:1160px;
+    }
+}
+
+/* from http://tobiasahlin.com/spinkit/ */
+.spinner {
+  margin: 20px auto 0;
+  width: 70px;
+  display:none;
+  text-align: center;
+}
+
+.spinner > div {
+  margin-left:5px;
+  width: 18px;
+  height: 18px;
+  background-color: rgba(50,50,50,0.8);
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
