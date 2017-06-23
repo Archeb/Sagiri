@@ -29,5 +29,8 @@
 					<?php $this->content(); ?>	
 					<?php $this->need('comments.php'); ?>
 				</div>
+				<div class="view_back" onclick="hideview();">
+					<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>&nbsp;返回
+				</div>
 			</div>
 		</div>

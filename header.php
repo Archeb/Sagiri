@@ -13,6 +13,7 @@
 	}
 	backTitle();
 	var siteurl='<?php $this->options->siteUrl(); ?>';
+	var likeurl='<?php Helper::options()->index('/action/like?up'); ?>';
 	</script>
 	<body>
 		<background></background>
@@ -27,9 +28,11 @@
 					<a onclick="showview('<?php $pages->permalink(); ?>');" class="barlist_item"><?php $pages->title(); ?></a>
 					<?php endwhile; ?>
 				</div>
+				<!--
+					这部分的样式我写了但是我不打算用 如果的确有需要可以自己打开用
 					<div class="barlist_group barlist_right">
 					<div class="barlist_item">Put whatever you want</div>
-				</div>
+				</div>-->
 			</div>
 		</navbar>
 		<div class="container posts">

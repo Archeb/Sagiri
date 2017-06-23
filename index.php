@@ -30,10 +30,9 @@ if(!isset($_GET['ajax_load'])){
 					</div>
 				</div>
 				<div class="post_foot">
-					<a class="sagiri_btn" style="width:110px" onclick="showview('<?php $this->permalink() ?>');">继续阅读</a>
-					<a class="sagiri_btn" style="width:70px;background-color:orange">点赞</a>
-					<a class="sagiri_btn" style="width:70px;background-color:red">发送</a>
-					<input class="post_comment_quick" type="" name="" id="" value="" placeholder="在这里可以快速发表评论" />
+					<button class="sagiri_btn" onclick="showview('<?php $this->permalink() ?>');">继续阅读</button>
+					<button onclick="likeUp(<?php echo $this->cid; ?>)" class="sagiri_btn" style="background-color:orange">点赞(<span id="like-<?php echo $this->cid; ?>"><?php echo Like_Plugin::theLike(false); ?></span>)</button>
+					<button class="sagiri_btn" style="background-color:red">分享</button>
 				</div>
 			</div>
 			<?php endwhile; ?>

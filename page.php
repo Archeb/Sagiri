@@ -17,7 +17,7 @@
 					<a href="#" class="view_toolbar_item">
 						<i class="fa fa-rss fa-3x" aria-hidden="true"></i>
 					</a>
-					<a href="#" class="view_toolbar_item">
+					<a href="#comments" class="view_toolbar_item">
 						<i class="fa fa-comment fa-3x" style="line-height: 0.8;" aria-hidden="true"></i>
 					</a>
 				</div>
@@ -28,6 +28,9 @@
 				<div class="view_body">
 					<?php $this->content(); ?>	
 					<?php $this->need('comments.php'); ?>
+				</div>
+				<div class="view_back" onclick="hideview();">
+					<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>&nbsp;返回
 				</div>
 			</div>
 		</div>

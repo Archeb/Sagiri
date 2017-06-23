@@ -204,10 +204,7 @@ navbar{
             margin-top:-58px;
             background-image:linear-gradient(transparent, #f5f5f5),url(../img/sagiri_1.jpg);
             background-size: cover;
-            padding-top:150px;
-            padding-left:50px;
-            padding-right:50px;
-            padding-bottom:120px;
+            padding: 150px 50px 120px;
             .view_meta{
                 color:@gray;
                 border-left:solid #66ccff 5px;
@@ -225,6 +222,17 @@ navbar{
                 max-width:100%;
             }
         }
+        .view_back{
+            text-align:center;
+            padding:5px 0;
+            background-color:rgba(255,255,255,0.7);
+            position:fixed;
+            bottom:0;
+            left:0;
+            right:0;
+            border-top:solid rgba(135,135,135,0.5) 1px;
+            display:none;
+        }
     }
 }
 
@@ -232,7 +240,7 @@ navbar{
     cursor:pointer;
     text-decoration: none;
     margin:0 10px;
-    padding:5px;
+    padding:5px 13px;
     background-color:@gray;
     border: none;
     color:@white;
@@ -381,6 +389,37 @@ blockquote {
     margin: 1.6em 0;
     padding: 0 1.6em;
     border-left: .6em solid #dfe1e3
+}
+
+@media(max-width:768px){
+    .posts .post_item .post_body {
+        flex-direction: column;
+    }
+    .posts .post_item .post_body .post_image {
+        width: auto;
+        height: 200px;
+    }
+    .view .view_container .view_head {
+        padding:150px 15px 120px;
+    }
+    .view .view_container .view_body {
+        padding: 15px;
+    }
+    .view .view_container .view_back{
+        display:block;
+    }
+    #comments{
+        padding-bottom:20px;
+    }
+    .posts .post_item .post_title {
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .posts .post_item .post_actions {
+        display: none;
+    }
 }
 
 /* from grid.css */
