@@ -1,5 +1,5 @@
 var loadingmore=false;
-
+var lastscroll=0;
 function showview(url){
 	htmlobj=$.ajax({url:url+'?sagiri_pjax',async:false});
   	var view=$(htmlobj.responseText);
@@ -33,7 +33,6 @@ function likeUp(cid){
 			cid:cid
 		},
 		function(data){
-        //$('#post-' + cid).find('._like_btn').attr("onclick","alert('你已经点过赞了哦')");
 		var zan = $('#like-' + cid).text();
 		$('#like-' + cid).text(parseInt(zan) + 1);
 		},'json');
@@ -47,8 +46,29 @@ $(document).ready(function(){
 		},100);
 	}
 	$(document).on('scroll',function(){
+		
+		
 		if($('html')[0].scrollHeight-($('html')[0].scrollTop+window.innerHeight)===0 || $('body')[0].scrollHeight-($('body')[0].scrollTop+window.innerHeight)===0){
 			loadnextpage();
 		}
+		//判断向上还是向下拖动
+		var nowscroll=$('html')[0].scrollTop;
+		if(lastscroll-nowscroll > 0){
+			$('musicbar').css('margin-top','0');
+			lastscroll=nowscroll;
+		}else if(lastscroll-nowscroll < 0){
+			$('musicbar').css('margin-top','-60px');
+			lastscroll=nowscroll;
+		}else if(lastscroll-nowscroll == 0){
+			//浏览器兼容问题，有的浏览器认的是body元素
+			var nowscroll=$('body')[0].scrollTop;
+			if(lastscroll-nowscroll > 0){
+				$('musicbar').css('margin-top','0');
+				lastscroll=nowscroll;
+			}else if(lastscroll-nowscroll < 0){
+				$('musicbar').css('margin-top','-60px');
+			}
+		}
+		
 	});
 })

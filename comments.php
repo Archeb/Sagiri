@@ -39,7 +39,7 @@
     		$("#comment-form").on('submit',function(){
     			$.ajax({    
                     type:'post',        
-                    url:'<?php echo $this->permalink."comment?_=".$this->security->getToken(str_replace('?sagiri_pjax','',$this->request->getRequestUrl())) ?>',    
+                    url:'<?php echo $this->permalink."/comment?_=".$this->security->getToken(str_replace('?sagiri_pjax','',$this->request->getRequestUrl())) ?>',    
                     data:$("#comment-form").serialize(),  
                     dataType:'json',
                    	complete:function(data){   

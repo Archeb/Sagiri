@@ -1,10 +1,8 @@
-
 @black:#303030;
 @white:#F6F6F6;
 @gray:#878787;
 @background:url(../img/sagiri_1.jpg);
 @shadow:0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-
 
 html {
     font-family:~' Consolas,"Open Sans", Helvetica, Tahoma, Arial, "Microsoft YaHei", 微软雅黑, STXihei, 华文细黑, SimSun, 宋体, Heiti, 黑体, sans-serif';
@@ -25,14 +23,19 @@ background{
     background-size: cover;
     z-index:-1;
 }
+body{
+    margin-left:310px;
+}
 
-navbar{
+musicbar{
+    margin-left:310px;
     opacity:0.9;
-    z-index:10;
+    z-index:8;
     height:50px;
-    width:100%;
+    width:calc(~'100% - 300px');
     position: fixed;
     top:0;
+    transition: margin-top 0.3s;
     left:0;
     font-size:17px;
     line-height:2.3;
@@ -77,8 +80,76 @@ navbar{
         background-image: @background;
     }
 }
-
+.sidebar{
+    height:100vh;
+    width:310px;
+    background-color:rgba(134,134,134,0.7);
+    color:white;
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    overflow:hidden;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    z-index:9;
+    &:before{
+        content: '';
+        position:absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        filter: blur(15px) brightness(0.5);
+        margin:-10px;
+        background-image: @background;
+        background-attachment: fixed;
+        background-size: cover;
+        z-index:-1;
+    }
+    .sidebar_item{
+        color:white;
+        cursor: pointer;
+        padding: 10px 20px;
+        transition:background-color 0.3s, transform 0.1s, padding 0.2s;
+        &:hover{
+            background-color:rgba(174,174,174,0.7);
+            padding:10px 22px;
+        }
+        &:active{
+            transform:scale(0.97);
+        }
+    }
+    .sidebar_search{
+        margin:10px 20px;
+        width:calc(100% - 20px);
+        background-color:rgba(88,88,88,0.8);
+        border:none;
+        text-align: center;
+        color:white;
+    }
+    .sidebar_icon{
+        border-radius:50%;
+        width:175px;
+        margin:20px auto;
+    }
+    .sidebar_meta{
+        position:absolute;
+        width:310px;
+        bottom:0;
+        color:#c5b6c0;
+        a{
+            color:#c5b6c0;
+            transition:color 0.5s;
+            &:hover{
+                color: #39bde9;
+            }
+        }
+    }
+}
+input::-webkit-input-placeholder{
+    color: #9f8395;
+}
 .posts{
+  
     margin-top:80px;
     .post_item{
         margin-top:40px;
@@ -260,7 +331,19 @@ navbar{
     50%{transform:rotate(5deg)}
     100%{transform:rotate(-5deg)}
 }
-
+::-webkit-scrollbar{
+    width:13px;
+    background-color: #3f4d5b;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #7f8a91;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #9fa7ac;
+}
+::-webkit-scrollbar-thumb:active{
+    background-color: #bfc5c8;
+}
 /* Typecho Comment Stylesheet Hacking */
 #comments{
     border-top: dotted rgba(135,135,135,0.6);
