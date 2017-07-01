@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Archeb/Sagiri/issues"
   },
-  "homepage": "https://github.com/Archeb/Sagiri#readme"
+  "homepage": "https://github.com/Archeb/Sagiri#readme",
+  "dependencies": {
+    "aplayer": "^1.6.0"
+  }
 }

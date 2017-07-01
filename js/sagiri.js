@@ -46,29 +46,37 @@ $(document).ready(function(){
 		},100);
 	}
 	$(document).on('scroll',function(){
-		
-		
 		if($('html')[0].scrollHeight-($('html')[0].scrollTop+window.innerHeight)===0 || $('body')[0].scrollHeight-($('body')[0].scrollTop+window.innerHeight)===0){
 			loadnextpage();
 		}
-		//判断向上还是向下拖动
-		var nowscroll=$('html')[0].scrollTop;
-		if(lastscroll-nowscroll > 0){
-			$('musicbar').css('margin-top','0');
-			lastscroll=nowscroll;
-		}else if(lastscroll-nowscroll < 0){
-			$('musicbar').css('margin-top','-60px');
-			lastscroll=nowscroll;
-		}else if(lastscroll-nowscroll == 0){
-			//浏览器兼容问题，有的浏览器认的是body元素
-			var nowscroll=$('body')[0].scrollTop;
-			if(lastscroll-nowscroll > 0){
-				$('musicbar').css('margin-top','0');
-				lastscroll=nowscroll;
-			}else if(lastscroll-nowscroll < 0){
-				$('musicbar').css('margin-top','-60px');
-			}
-		}
-		
 	});
 })
+
+var ap = new APlayer({
+    element: document.getElementById('aplayer'),                       // Optional, player element
+    narrow: false,                                                     // Optional, narrow style
+    autoplay: true,                                                    // Optional, autoplay song(s), not supported by mobile browsers
+    showlrc: 0,                                                        // Optional, show lrc, can be 0, 1, 2, see: ###With lrc
+    mutex: true,                                                       // Optional, pause other players when this player playing
+    theme: '#FFFFFF',                                                  // Optional, theme color, default: #b7daff
+    mode: 'random',                                                    // Optional, play mode, can be `random` `single` `circulation`(loop) `order`(no loop), default: `circulation`
+    preload: 'metadata',                                               // Optional, the way to load music, can be 'none' 'metadata' 'auto', default: 'auto'
+    listmaxheight: '513px',                                             // Optional, max height of play list
+    music: [
+            {
+                title: 'secret base~君がくれたもの~',
+                author: '茅野愛衣',
+                url: 'http://devtest.qiniudn.com/secret base~.mp3',
+                pic: 'http://devtest.qiniudn.com/secret base~.jpg',
+                lrc: 'secret base~君がくれたもの~.lrc'
+            },
+            {
+                title: '回レ！雪月花',
+                author: '小倉唯',
+                url: 'http://devtest.qiniudn.com/回レ！雪月花.mp3',
+                pic: 'http://devtest.qiniudn.com/回レ！雪月花.jpg',
+                lrc: '回レ！雪月花.lrc'
+            }
+        ]
+});
+$('.aplayer-list').addClass('aplayer-list-hide');

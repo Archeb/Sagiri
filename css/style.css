@@ -12,7 +12,7 @@ background {
   width: 100%;
   height: 100%;
   position: fixed;
-  background-image: url(../img/sagiri_1.jpg);
+  background-image: url(../img/sagiri_2.jpg);
   background-size: cover;
   z-index: -1;
 }
@@ -23,7 +23,6 @@ musicbar {
   margin-left: 310px;
   opacity: 0.9;
   z-index: 8;
-  height: 50px;
   width: calc(100% - 300px);
   position: fixed;
   top: 0;
@@ -36,7 +35,6 @@ musicbar {
   box-shadow: 0 0 10px #0c0c0c;
 }
 musicbar .barlist {
-  padding: 5px;
   filter: blur(0px);
 }
 musicbar .barlist .barlist_right {
@@ -67,7 +65,13 @@ musicbar:before {
   z-index: -1;
   background-size: cover;
   margin: -30px -10px -15px;
-  background-image: url(../img/sagiri_1.jpg);
+  background-image: url(../img/sagiri_2.jpg);
+}
+.musicbar_pinned {
+  margin-top: 0px;
+}
+.musicbar_unpinned {
+  margin-top: -60px;
 }
 .sidebar {
   height: 100vh;
@@ -93,7 +97,7 @@ musicbar:before {
   left: 0;
   filter: blur(15px) brightness(0.5);
   margin: -10px;
-  background-image: url(../img/sagiri_1.jpg);
+  background-image: url(../img/sagiri_2.jpg);
   background-attachment: fixed;
   background-size: cover;
   z-index: -1;
@@ -161,7 +165,7 @@ input::-webkit-input-placeholder {
   left: 0;
   filter: blur(15px);
   margin: -5px;
-  background-image: url(../img/sagiri_1.jpg);
+  background-image: url(../img/sagiri_2.jpg);
   background-attachment: fixed;
   background-size: cover;
   z-index: -1;
@@ -335,6 +339,74 @@ input::-webkit-input-placeholder {
 }
 ::-webkit-scrollbar-thumb:active {
   background-color: #bfc5c8;
+}
+/* APlayer CSS Hacking */
+.aplayer {
+  width: 100%;
+  box-shadow: none;
+  margin: 0;
+}
+.aplayer .aplayer-pic {
+  width: 50px;
+  height: 50px;
+}
+.aplayer .aplayer-music {
+  z-index: 1;
+  position: absolute;
+  margin: 0;
+}
+.aplayer .aplayer-thumb {
+  display: none;
+}
+.aplayer .aplayer-loaded {
+  display: none;
+}
+.aplayer .aplayer-list-title {
+  color: #666;
+}
+.aplayer .aplayer-info {
+  border-bottom: none!important;
+  height: 50px!important;
+}
+.aplayer .aplayer-controller {
+  height: 50px;
+  top: 0;
+  left: 50px;
+  z-index: 0;
+  width: calc(100% - 50px);
+  display: block;
+  position: absolute!important;
+  background-color: transparent;
+}
+.aplayer .aplayer-bar-wrap {
+  padding: 0!important;
+  margin: 0!important;
+}
+.aplayer .aplayer-bar {
+  height: 50px!important;
+  background: transparent!important;
+}
+.aplayer .aplayer-played {
+  background: rgba(250, 250, 250, 0.5) !important;
+  position: absolute!important;
+  left: 0!important;
+  top: 0!important;
+  bottom: 0!important;
+  height: 50px!important;
+}
+.aplayer .aplayer-time {
+  position: absolute!important;
+  right: 15px!important;
+  background-color: rgba(250, 250, 250, 0.6);
+  padding: 2px 3px 1px;
+  border-radius: 3px;
+  color: #303030 !important;
+}
+.aplayer .aplayer-title {
+  color: #0f0f0f;
+}
+.aplayer .aplayer-author {
+  color: #878787;
 }
 /* Typecho Comment Stylesheet Hacking */
 #comments {

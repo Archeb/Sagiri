@@ -20,20 +20,10 @@
 		<background></background>
 		
 		<musicbar>
-			<div class="container barlist">
+			<div class="barlist">
 				<div class="barlist_group barlist_left">
-					这里应该放一个播放器的但是我没时间写了先放着吧等我旅游完再说
-					<!--<a href="<?php $this->options->siteUrl(); ?>" class="barlist_item">Index</a>
-					<?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
-                    <?php while($pages->next()): ?>
-					<a onclick="showview('<?php $pages->permalink(); ?>');" class="barlist_item"><?php $pages->title(); ?></a>
-					<?php endwhile; ?>-->
+					<div id="aplayer" class="aplayer"></div>
 				</div>
-				<!--
-					这部分的样式我写了但是我不打算用 如果的确有需要可以自己打开用
-					<div class="barlist_group barlist_right">
-					<div class="barlist_item">Put whatever you want</div>
-				</div>-->
 			</div>
 		</musicbar>
 		
