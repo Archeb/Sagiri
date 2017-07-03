@@ -1,14 +1,22 @@
 # Typecho主题[Sagiri]
 
-
-这款主题的名字和某位黄漫老师没有任何关系(笑)，请不要把这个名字与任何现实或者ACGN作品中的人物联系起来(背景和预览已经暴露了)
-
 ### 使用该主题前，请先安装并启用点赞插件（在Plugin-Like）有
 
 这是一款毛玻璃效果，但也有一丢丢MD风格的主题（反正规范啥的我不懂，大概就这样子就得了），可以说是非常适合萌豚建站，包括我
 
-目前为止还差移动设备自适应没完美、HTML5背景音乐没做（APlayer），然后就差不多了
+主题的名字和某位黄漫老师没有任何关系(笑)，请不要把这个名字与任何现实或者ACGN作品中的人物联系起来(背景和预览已经暴露了)
 
-不过我还是先不要脸的传到Gayhub去，当然在我发Release之前最好不用使用，当然你要用我也拦不住你，只要记得watch下我的repo，我有Release的时候换上。
+### 引用 & 感谢
 
-说了这么多，是时候甩出Gayhub链接了：https://github.com/Archeb/Sagiri 好评请点个Star哦
+* DIYGOD 的  APlayer （已Star）  [https://github.com/DIYgod/APlayer]
+* jQuery [http://jquery.com/]
+* FontAwesome [http://fontawesome.io/]
+* Typecho 点赞插件 Like  [http://www.phoneshuo.com/PHP/typecho-like-plugin.html]
+
+### 版权信息 & 许可证
+
+作者：Archeb@iDea Leaper Team [https://qwq.moe]
+
+特别感谢：KeJun [https://kejun.me]
+
+许可证 ：SATA License [https://github.com/zTrix/sata-license]

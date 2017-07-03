@@ -25,6 +25,7 @@ background{
 }
 body{
     margin-left:310px;
+    transition:margin 0.5s;
 }
 
 musicbar{
@@ -34,7 +35,7 @@ musicbar{
     width:calc(~'100% - 300px');
     position: fixed;
     top:0;
-    transition: margin-top 0.3s;
+    transition: margin-top 0.3s,width 0.5s,margin-left 0.5s;
     left:0;
     font-size:17px;
     line-height:2.3;
@@ -43,7 +44,7 @@ musicbar{
     box-shadow: 0 0 10px #0c0c0c;
     .barlist{
         filter: blur(0px);
-        
+        -webkit-filter: blur(0px);
         .barlist_right{
             flex-direction: row-reverse;
             margin-top:-39px;
@@ -72,6 +73,7 @@ musicbar{
         left:0;
         width:100%;
         filter: blur(15px) brightness(0.8);
+        -webkit-filter: blur(15px) brightness(0.8);
         z-index:-1;
         background-size: cover;
         margin:-30px -10px -15px;
@@ -92,6 +94,7 @@ musicbar{
     position:fixed;
     top:0;
     left:0;
+    transition:margin 0.5s;
     bottom:0;
     overflow:hidden;
     display:flex;
@@ -103,6 +106,7 @@ musicbar{
         position:absolute;
         top: 0; right: 0; bottom: 0; left: 0;
         filter: blur(15px) brightness(0.5);
+        -webkit-filter: blur(15px) brightness(0.5);
         margin:-10px;
         background-image: @background;
         background-attachment: fixed;
@@ -149,6 +153,12 @@ musicbar{
         }
     }
 }
+.sidebar_show_btn{
+    padding: 3px 16px 0;
+    font-size: 20px;
+    display:none;
+}
+
 input::-webkit-input-placeholder{
     color: #9f8395;
 }
@@ -168,6 +178,7 @@ input::-webkit-input-placeholder{
             position:absolute;
             top: 0; right: 0; bottom: 0; left: 0;
             filter: blur(15px);
+            -webkit-filter: blur(15px);
             margin:-5px;
             background-image: @background;
             background-attachment: fixed;
@@ -200,7 +211,6 @@ input::-webkit-input-placeholder{
             background:rgba(255,255,255,0.5);
             padding:20px;
             display:flex;
-            
             overflow: hidden;
             height:20px;
         }
@@ -276,6 +286,7 @@ input::-webkit-input-placeholder{
             }
         }
         .view_head{
+            text-shadow: 1px 1px 8px #FFF;
             margin-top:-58px;
             background-image:linear-gradient(transparent, #f5f5f5),url(../img/sagiri_1.jpg);
             background-size: cover;
@@ -549,6 +560,21 @@ blockquote {
     border-left: .6em solid #dfe1e3
 }
 
+@media(max-width:992px){
+    .sidebar{
+        margin-left:-310px;
+    }
+    musicbar{
+        margin-left:0;
+        width:100%;
+    }
+    body{
+        margin-left:0;
+    }
+    .sidebar_show_btn{
+        display:block;
+    }
+}
 @media(max-width:768px){
     .posts .post_item .post_body {
         flex-direction: column;
@@ -577,6 +603,10 @@ blockquote {
     }
     .posts .post_item .post_actions {
         display: none;
+    }
+    .sidebar_icon{
+        width:125px!important;
+        margin:30px auto 0!important;
     }
 }
 

@@ -22,6 +22,7 @@
 		<musicbar>
 			<div class="barlist">
 				<div class="barlist_group barlist_left">
+					<div class="sidebar_show_btn"><i class="fa fa-bars" aria-hidden="true"></i></div>
 					<div id="aplayer" class="aplayer"></div>
 				</div>
 			</div>

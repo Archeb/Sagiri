@@ -32,7 +32,6 @@ if(!isset($_GET['ajax_load'])){
 				<div class="post_foot">
 					<button class="sagiri_btn" onclick="showview('<?php $this->permalink() ?>');">继续阅读</button>
 					<button onclick="likeUp(<?php echo $this->cid; ?>)" class="sagiri_btn" style="background-color:orange">点赞(<span id="like-<?php echo $this->cid; ?>"><?php echo Like_Plugin::theLike(false); ?></span>)</button>
-					<button class="sagiri_btn" style="background-color:red">分享</button>
 				</div>
 			</div>
 			<?php endwhile; ?>
